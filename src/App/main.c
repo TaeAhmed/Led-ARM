@@ -1,12 +1,12 @@
 #include "Mcal/GPIO.h"
 #include "Mcal/Timer.h"
-#include "Hall/Led.c"
+#include "Hall/Led.h"
 
 
 
 int main(void) {
-ledInit(led1);	
-void (*CBK)(struct GPIO_Led) = &ledToggle;
-Timer_setCBK(CBK,led1);
+	SysTick_Init();
+	SysTick_SetCBK(&ledToggle);
+
 return 0; 
 }
