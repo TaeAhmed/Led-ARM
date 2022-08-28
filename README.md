@@ -11,4 +11,5 @@ understood what should be done not including C files but h files instead, code s
 
 29/8/2021 12:50AM
 nearly complete timer module, depends on led module, will complete that next,
-replaced all .c includes with .h, started making header files and adding API prototypes
+replaced all .c includes with .h, started making header files and adding API prototypes,
+code is not complete
