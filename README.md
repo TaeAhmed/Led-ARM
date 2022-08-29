@@ -9,7 +9,10 @@ I will do my best to complete the project till the revoke date
 27/8/2022 11:58PM worked on the timer block, 
 understood what should be done not including C files but h files instead, code still incomplete
 
-29/8/2021 12:50AM
+29/8/2022 12:50AM
 nearly complete timer module, depends on led module, will complete that next,
 replaced all .c includes with .h, started making header files and adding API prototypes,
 code is not complete
+
+29/8/2022 2:34 PM
+completed timer module, no longer depends on anything, full code not complete
