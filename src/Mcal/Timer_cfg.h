@@ -8,6 +8,9 @@
 #define offTime_ms 999
 #define offTime_us 999
 /*end selection*/
+/*Clock*/
+#define Clock 12000000
+/*end selection*/
 #if (onTime_ms > 999 || offTime_ms > 999) 
 	#error "total ms should be less than a second"
 #endif
