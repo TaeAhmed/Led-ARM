@@ -1,8 +1,5 @@
 #include "Common/Platform_Types.h"
 
-#define ledType_GPIO 0
-#define ledType_I2C 1
-
 #define GPIO_PORT_A 0
 #define GPIO_PORT_B 1
 #define GPIO_PORT_C 2
@@ -10,16 +7,17 @@
 #define GPIO_PORT_E 4
 #define GPIO_PORT_F 5
 
-/*Set ledType*/
-#define ledType ledType_GPIO
-/*end*/
+/*select led count here*/
+#define GPIO_Led_Count 1
+#define I2C_Led_Count 0
+/*code will do nothing with I2C leds ATM*/
+/*end select*/
 
-#if (ledType == 0) 
-struct GPIO_Led{
-uint8_t port;
-uint8_t pin;	
-};
-/*create GPIO leds*/
-struct GPIO_Led led1 = {GPIO_PORT_F,1};
-/*end*/
-#endif
+/*Enter GPIO_Leds in array of struct format*/
+/*example:
+    #define GPIO_Leds {{GPIO_PORT_F, 1},{GPIO_PORT_D,5},{..port,..pin}} where GPIO_Led_Count is array size   */
+#define GPIO_Leds {{GPIO_PORT_F,1}}
+#define I2C_Leds {}
+/*end select*/
+
+
