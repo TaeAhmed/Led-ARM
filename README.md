@@ -25,3 +25,5 @@ debugging why the code fail to do it's job in simulation
 30/8/2022 10:37PM  code does set DIR and DEN in simulation but data fixed at 0000, trying alot in bit banding and bit masking 
 
 30/8/2022 11:40PM code is fully working 
+
+Drive for videos: https://drive.google.com/drive/folders/1oYnpVNiGg0u0GLtC-vsOO4d9Cl1vrbR7?usp=sharing
