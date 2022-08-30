@@ -18,5 +18,6 @@ code is not complete
 completed timer module, no longer depends on anything, full code not complete
 
 29/8/2022 8:11PM Led module complete, DIO driver still incomplete
+
 30/8/2022 8PM completed all modules, Sorry GPIO driver is not reentrant for now,
 debugging why the code fail to do it's job in simulation
