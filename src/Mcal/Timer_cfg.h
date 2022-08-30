@@ -1,12 +1,12 @@
 /*example 2s and 350ms and 50us -accuracy might be low in us-*/
 /*--on and off time selection--*/
-#define onTime_sec 50
-#define onTime_ms 999
-#define onTime_us 999
+#define onTime_sec 0
+#define onTime_ms 500
+#define onTime_us 0
 
-#define offTime_sec 50
-#define offTime_ms 999
-#define offTime_us 999
+#define offTime_sec 0
+#define offTime_ms 500
+#define offTime_us 0
 /*end selection*/
 /*Clock*/
 #define Clock 12000000

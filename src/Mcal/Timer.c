@@ -19,7 +19,7 @@ static	uint32_t remTicks =0;
 static boolean State = 0;
 static uint8_t condition;
 
-static void(*CBK)(void);
+static void(*CBK)(void) = NULL_PTR;
 /*--*/
 /*API functions*/
 void SysTick_SetCBK(void(*cbk)(void)){
