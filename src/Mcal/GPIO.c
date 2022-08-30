@@ -24,7 +24,8 @@ static void GPIO_Unlock(volatile uint32_t *Dport);
 /*--*/
 /*API functions*/
 void GPIO_WriteChannel(uint8_t port, uint8_t pin, boolean state){
-*GPIO_GetPort_Data(port) |= (state<<pin);
+if(state) SET_BIT_PER_BB(*GPIO_GetPort_Data(port),pin);
+	else CLEAR_BIT_PER_BB(*GPIO_GetPort_Data(port),pin);
 }
 void GPIO_ToggleChannel(uint8_t port, uint8_t pin){
   if(!state) {
@@ -35,9 +36,7 @@ void GPIO_ToggleChannel(uint8_t port, uint8_t pin){
 	state=!state;}
 }
 boolean GPIO_ReadChannel(uint8_t port, uint8_t pin){
-boolean state = 0;
-state = (uint8_t)*GPIO_GetPort_Data(port) & (1<<pin);	
-return state;	
+return BIT_IS_SET(*GPIO_GetPort_Data(port),pin);	
 }
 
 

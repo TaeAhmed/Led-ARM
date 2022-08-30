@@ -17,7 +17,7 @@
 /*Enter GPIO_Leds in array of struct format*/
 /*example:
     #define GPIO_Leds {{GPIO_PORT_F, 1},{GPIO_PORT_D,5},{..port,..pin}} where GPIO_Led_Count is array size   */
-#define GPIO_Leds {{GPIO_PORT_F,1}}
+#define GPIO_Leds {{GPIO_PORT_A,6}}
 #define I2C_Leds {}
 /*end select*/
 
