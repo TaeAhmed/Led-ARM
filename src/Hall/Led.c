@@ -37,6 +37,6 @@ void DIO_ledsToggle(){
 void DIO_ledsInit(){
 	int i=GPIO_Led_Count;
 	for(i;i>0;i--){
-		GPIO_DirChannel(leds[i-1].port,leds[i-1].pin,1);
+		GPIO_InitChannel(leds[i-1].port,leds[i-1].pin);
 	}
 }

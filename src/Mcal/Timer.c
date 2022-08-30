@@ -74,6 +74,9 @@ void SysTick_Handler(){
 			start_Timer(0xFFFFFF);
 			reloads--;
 			break;
+		default:
+			start_Timer(16);
+			break;
 	}
 }
 /*local functions*/
@@ -87,6 +90,8 @@ uint32_t ticks = (sec*1000000 + ms*1000 + us)*ticks_per_us ;
 static void start_Timer(uint32_t ticks){
 	STRELOAD.R = ticks;
 	STCURRENT.R =0;
+	SET_BIT(STCTRL.R,2);
+	SET_BIT(STCTRL.R,1);
 	SET_BIT(STCTRL.R,0);
 }
 static void stop_Timer(){
