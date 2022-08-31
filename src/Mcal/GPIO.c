@@ -24,15 +24,16 @@ static void GPIO_Unlock(volatile uint32_t *Dport);
 /*API functions*/
 void GPIO_WriteChannel(uint8_t port, uint8_t pin, boolean state){
 	volatile uint32_t *maskedReg =GPIO_GetPort_Data(port)+(1<<pin);
-if(state) *maskedReg |= (1<<pin);
-	else *maskedReg &= ~(1<<pin);
+if(state) SET_BIT(*maskedReg,pin);
+	else CLEAR_BIT(*maskedReg,pin);
 }
 void GPIO_ToggleChannel(uint8_t port, uint8_t pin){
 	volatile uint32_t *maskedReg =GPIO_GetPort_Data(port)+(1<<pin);
-	*maskedReg ^= (1<<pin);
+	TOGGLE_BIT(*maskedReg,pin);
 }
 boolean GPIO_ReadChannel(uint8_t port, uint8_t pin){
-return BIT_IS_SET(*(GPIO_GetPort_Data(port)+(1<<pin)),pin);	
+	volatile uint32_t *maskedReg =GPIO_GetPort_Data(port)+(1<<pin);
+return BIT_IS_SET(*maskedReg,pin);	
 }
 
 
@@ -100,7 +101,7 @@ switch(port){
 }
 return DATA;
 }
-/*Local functions*/
+
 static void GPIO_ClkEnable(uint8_t port){
 SYSCTL_RCGCGPIO |= (1<<port);
 }
